@@ -7,43 +7,39 @@ import { Star, MapPin, Clock } from "lucide-react"
 const featuredDoctors = [
   {
     id: 1,
-    name: "Dr. Sophie Martin",
+    name: "Dr. Sami Ben Ali",
     specialty: "Cardiologue",
+    city: "Tunis",
     rating: 4.9,
     reviews: 124,
-    address: "15 rue de la Paix, Paris",
-    availability: "Disponible aujourd'hui",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/caring-tunisian-doctor.png",
   },
   {
     id: 2,
-    name: "Dr. Thomas Dubois",
+    name: "Dr. Leila Trabelsi",
     specialty: "Dermatologue",
+    city: "Sousse",
     rating: 4.8,
     reviews: 98,
-    address: "8 avenue Victor Hugo, Lyon",
-    availability: "Disponible demain",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/tunisian-doctor-consultation.png",
   },
   {
     id: 3,
-    name: "Dr. Marie Lefevre",
+    name: "Dr. Nadia Mejri",
     specialty: "Pédiatre",
+    city: "Sfax",
     rating: 4.9,
     reviews: 156,
-    address: "22 boulevard Gambetta, Marseille",
-    availability: "Disponible aujourd'hui",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/placeholder.svg?key=pld2d",
   },
   {
     id: 4,
-    name: "Dr. Jean Moreau",
+    name: "Dr. Karim Belhaj",
     specialty: "Généraliste",
+    city: "Tunis",
     rating: 4.7,
     reviews: 87,
-    address: "5 rue des Lilas, Bordeaux",
-    availability: "Disponible demain",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/caring-tunisian-doctor.png",
   },
 ]
 
@@ -70,7 +66,7 @@ export function FeaturedDoctors() {
 
                 <div className="flex items-center mt-2 text-sm text-gray-600">
                   <MapPin className="h-4 w-4 mr-1 text-docfinder-primary" />
-                  <span className="truncate">{doctor.address}</span>
+                  <span className="truncate">{doctor.city}</span>
                 </div>
 
                 <div className="mt-3 flex items-center">
@@ -79,7 +75,7 @@ export function FeaturedDoctors() {
                     variant="outline"
                     className="text-docfinder-secondary border-docfinder-secondary bg-docfinder-secondary/10"
                   >
-                    {doctor.availability}
+                    Disponible aujourd'hui
                   </Badge>
                 </div>
               </div>

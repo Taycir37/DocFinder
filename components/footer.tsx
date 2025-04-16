@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from "lucide-react"
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
 
 export function Footer() {
   return (
@@ -92,21 +92,12 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
-            <ul className="space-y-2">
-              <li className="flex items-center">
-                <Mail className="h-5 w-5 mr-2 text-docfinder-secondary" />
-                <a href="mailto:contact@docfinder.fr" className="text-white/80 hover:text-white transition-colors">
-                  contact@docfinder.fr
-                </a>
-              </li>
-              <li className="flex items-center">
-                <Phone className="h-5 w-5 mr-2 text-docfinder-secondary" />
-                <a href="tel:+33123456789" className="text-white/80 hover:text-white transition-colors">
-                  +33 1 23 45 67 89
-                </a>
-              </li>
-            </ul>
+            <div className="space-y-2">
+              <h3 className="font-semibold">Contact</h3>
+              <p className="text-sm">15 Avenue Habib Bourguiba, Tunis</p>
+              <p className="text-sm">+216 71 123 456</p>
+              <p className="text-sm">contact@docfinder.tn</p>
+            </div>
           </div>
         </div>
 

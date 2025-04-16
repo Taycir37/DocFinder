@@ -53,16 +53,20 @@ export function SearchForm() {
     >
       <div className="flex-1 flex items-center border rounded-lg px-3 bg-gray-50 hover:border-docfinder-primary focus-within:border-docfinder-primary focus-within:ring-1 focus-within:ring-docfinder-primary transition-all">
         <MapPin className="h-5 w-5 text-docfinder-primary mr-2" />
-        <Select value={city} onValueChange={setCity}>
+        <Select name="city">
           <SelectTrigger className="border-0 bg-transparent focus:ring-0 py-6">
-            <SelectValue placeholder="Sélectionnez une ville" />
+            <SelectValue placeholder="Toutes les villes" />
           </SelectTrigger>
           <SelectContent className="border-docfinder-primary">
-            {cities.map((city) => (
-              <SelectItem key={city} value={city}>
-                {city}
-              </SelectItem>
-            ))}
+            <SelectItem value="all">Toutes les villes</SelectItem>
+            <SelectItem value="tunis">Tunis</SelectItem>
+            <SelectItem value="sfax">Sfax</SelectItem>
+            <SelectItem value="sousse">Sousse</SelectItem>
+            <SelectItem value="monastir">Monastir</SelectItem>
+            <SelectItem value="nabeul">Nabeul</SelectItem>
+            <SelectItem value="hammamet">Hammamet</SelectItem>
+            <SelectItem value="bizerte">Bizerte</SelectItem>
+            <SelectItem value="gabes">Gabès</SelectItem>
           </SelectContent>
         </Select>
       </div>
