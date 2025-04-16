@@ -1,57 +1,10 @@
-// Script principal pour DocFinder avec intégration Back4App
-
-// Déclarations des variables globales (à remplacer par des imports si possible)
-const initializeParse = () => {
-  console.warn("initializeParse is a placeholder. Implement actual initialization.")
-}
-const AuthService = {
-  getCurrentUser: () => null,
-  logout: async () => {
-    console.warn("AuthService.logout is a placeholder.")
-    return true
-  },
-  signUp: async () => {
-    console.warn("AuthService.signUp is a placeholder.")
-    return {}
-  },
-  login: async () => {
-    console.warn("AuthService.login is a placeholder.")
-    return {}
-  },
-}
-const DoctorService = {
-  getAllDoctors: async () => {
-    console.warn("DoctorService.getAllDoctors is a placeholder.")
-    return []
-  },
-  searchDoctors: async () => {
-    console.warn("DoctorService.searchDoctors is a placeholder.")
-    return []
-  },
-  getDoctorById: async () => {
-    console.warn("DoctorService.getDoctorById is a placeholder.")
-    return {}
-  },
-}
-const ReviewService = {
-  getDoctorReviews: async () => {
-    console.warn("ReviewService.getDoctorReviews is a placeholder.")
-    return []
-  },
-  addReview: async () => {
-    console.warn("ReviewService.addReview is a placeholder.")
-  },
-}
-const AppointmentService = {
-  createAppointment: async () => {
-    console.warn("AppointmentService.createAppointment is a placeholder.")
-    return {}
-  },
-}
+// script.js - Script principal pour DocFinder
+import { initializeParse } from "./back4app-config.js"
+import { AuthService, DoctorService, ReviewService, AppointmentService } from "./services.js"
 
 document.addEventListener("DOMContentLoaded", async () => {
   // Initialiser Parse
-  initializeParse()
+  await initializeParse()
 
   // Vérifier si l'utilisateur est connecté
   checkUserAuthentication()
@@ -317,8 +270,8 @@ async function loadSearchResults() {
             </div>
             
             <div class="doctor-result-actions">
-              <a href="doctor-profile.html?id=${doctor.id}" class="btn btn-outline">Voir le profil</a>
-              <a href="booking.html?id=${doctor.id}" class="btn btn-primary">
+              <a href="doctor-profile.html?id=${doctor.objectId}" class="btn btn-outline">Voir le profil</a>
+              <a href="booking.html?id=${doctor.objectId}" class="btn btn-primary">
                 <i class="fas fa-calendar-alt"></i>
                 Prendre rendez-vous
               </a>
@@ -393,7 +346,7 @@ async function loadDoctorProfile() {
             </div>
           </div>
           <div class="doctor-profile-actions">
-            <a href="booking.html?id=${doctor.id}" class="btn btn-primary">
+            <a href="booking.html?id=${doctor.objectId}" class="btn btn-primary">
               <i class="fas fa-calendar-alt"></i>
               Prendre rendez-vous
             </a>
@@ -493,7 +446,7 @@ async function loadDoctorProfile() {
                 <div class="doctor-profile-review-form-container">
                   <h3>Laisser un avis</h3>
                   <form id="reviewForm" class="doctor-profile-review-form">
-                    <input type="hidden" id="doctorId" value="${doctor.id}">
+                    <input type="hidden" id="doctorId" value="${doctor.objectId}">
                     <div class="form-group">
                       <label for="rating">Note</label>
                       <div class="rating-input">
@@ -516,7 +469,7 @@ async function loadDoctorProfile() {
                 <div class="doctor-profile-review-form-container">
                   <h3>Soyez le premier à laisser un avis</h3>
                   <form id="reviewForm" class="doctor-profile-review-form">
-                    <input type="hidden" id="doctorId" value="${doctor.id}">
+                    <input type="hidden" id="doctorId" value="${doctor.objectId}">
                     <div class="form-group">
                       <label for="rating">Note</label>
                       <div class="rating-input">
